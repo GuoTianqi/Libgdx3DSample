@@ -2,15 +2,11 @@ package com.mygdx.game.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.mygdx.game.FrustumCullingTest;
-import com.mygdx.game.LoadSceneTest;
-import com.mygdx.game.MyGdxGame;
-import com.mygdx.game.RayPickingTest;
-import com.mygdx.game.ShaderTest;
+import com.mygdx.game.ShaderTest2;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		new LwjglApplication(new RayPickingTest(), config);
+		new LwjglApplication(new ShaderTest2(), config);
 	}
 }
