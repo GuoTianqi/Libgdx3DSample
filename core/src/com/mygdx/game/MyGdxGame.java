@@ -46,23 +46,28 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		assets = new AssetManager();
 		assets.load("data/ship.g3db", Model.class);
+		assets.load("data/1.g3db", Model.class);
 		loading = true;
 	}
 
 	private void doneLoading() {
 		Model ship = assets.get("data/ship.g3db", Model.class);
-		BoundingBox box = ship.calculateBoundingBox(new BoundingBox());
-		System.out.println("box = " + box.getWidth() + ", " + box.getHeight() + ", " + box.getDepth());
-		System.out.println("Density: " + Gdx.app.getGraphics().getDensity());
-		Gdx.app.debug("XXX", "Density: " + Gdx.app.getGraphics().getDensity());
-		Gdx.app.debug("XXX", "box = " + box.getWidth() + ", " + box.getHeight() + ", " + box.getDepth());
-		for (float x = -5f; x <= 5f; x += 2f) {
-			for (float z = -5f; z <= 5f; z += 2f) {
-				ModelInstance shipInstance = new ModelInstance(ship);
-				shipInstance.transform.setToTranslation(x, 0, z);
-				instances.add(shipInstance);
-			}
-		}
+		Model test = assets.get("data/1.g3db", Model.class);
+//		BoundingBox box = ship.calculateBoundingBox(new BoundingBox());
+//		System.out.println("box = " + box.getWidth() + ", " + box.getHeight() + ", " + box.getDepth());
+//		System.out.println("Density: " + Gdx.app.getGraphics().getDensity());
+//		Gdx.app.debug("XXX", "Density: " + Gdx.app.getGraphics().getDensity());
+//		Gdx.app.debug("XXX", "box = " + box.getWidth() + ", " + box.getHeight() + ", " + box.getDepth());
+//		for (float x = -5f; x <= 5f; x += 2f) {
+//			for (float z = -5f; z <= 5f; z += 2f) {
+//				ModelInstance shipInstance = new ModelInstance(ship);
+//				shipInstance.transform.setToTranslation(x, 0, z);
+//				instances.add(shipInstance);
+//			}
+//		}
+
+		ModelInstance testInstance = new ModelInstance(test);
+		instances.add(testInstance);
 		loading = false;
 	}
 
@@ -91,9 +96,9 @@ public class MyGdxGame extends ApplicationAdapter {
 	public void resize(int width, int height) {
 //		System.out.println("XXX width = " + width + ", height = " + height);
 //		Gdx.app.debug("XXX", "width = " + width + ", height = " + height);
-//		camController.camera.viewportWidth = width;
-//		camController.camera.viewportHeight = height;
-//		camController.update();
+		camController.camera.viewportWidth = width;
+		camController.camera.viewportHeight = height;
+		camController.update();
 	}
 
 	@Override

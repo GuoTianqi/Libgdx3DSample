@@ -5,10 +5,11 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.mygdx.game.FrustumCullingTest;
 import com.mygdx.game.LoadSceneTest;
 import com.mygdx.game.MyGdxGame;
+import com.mygdx.game.ShaderTest;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		new LwjglApplication(new FrustumCullingTest(), config);
+		new LwjglApplication(new ShaderTest(), config);
 	}
 }
